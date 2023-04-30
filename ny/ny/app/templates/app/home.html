@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Nanma Yatra - Bus and Auto Service</title>
+    {% load static %}
+    <style>
+      body {
+        background-image: url(" {% static 'images/image.avif' %} ");
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      h1, h2, h3 {
+        margin-top: 0;
+        text-align: center;
+        text-shadow: 2px 2px #333;
+      }
+      h1 {
+        font-size: 3rem;
+        color: #fff;
+      }
+      h2 {
+        font-size: 2rem;
+        color: #333;
+        text-transform: uppercase;
+      }
+      h3 {
+        font-size: 1.5rem;
+        color: #333;
+      }
+      p {
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        color: #555;
+      }
+      ul {
+        list-style: disc;
+        margin-left: 2rem;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      /* Navigation bar styles */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: #fff;
+        padding: 1rem;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+      nav li {
+        margin-right: 1rem;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5rem;
+      }
+      nav a:hover {
+        background-color: #fff;
+        color: #333;
+      }
+      /* Footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1rem;
+      }
+      /* Responsive styles */
+      @media screen and (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        nav ul {
+          margin-top: 1rem;
+        }
+        nav li {
+          margin-right: 0;
+        }
+      }
+      .driver-name {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.driver-name label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.driver-name input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h3>Nanma Yatra</h3>
+      <ul>
+        <li><a href="{% url 'bas' %}">SERVICE </a></li>
+        <li><a href="{% url 'driverlogin' %}">BECAME A DRIVER</a></li>
+        <li><a href="{% url 'm'  %}">MAP</a></li>
+        <li><a href="{% url 'submit_review' %}">REWIE</a></li>
+        <li><a href="{% url 'c' %}">CONTACT US</a></li>
+        <li><a href="{% url 'login' %}"> {{ user }}</a></li>
+        
+      </ul>
+    </nav>
+    {% if form %}
+    <div class="driver-name">
+      <label for="{{ form.d_n.id_for_label }}">Driver:</label>
+      {{ form.d_n }}
+    </div>
+    {% endif %}
+    <div>
+      <h1>Welcome to Nanma Yatra</h1>
+      <p>Nanma Yatra provides bus and auto services to various locations in the city. Our fleet of vehicles is well-maintained and comfortable, ensuring a safe and pleasant journey for all our passengers. We offer both AC and non-AC services, depending on your preference.</p>
+      <h2>Our Services</h2>
+      <ul>
+        <li>Bus services to various locations in the city</li>
+        <li>Auto services for short distances</li>
+        <li>AC and non-AC services available</li>
+        <li>Fully sanitized vehicles for your safety</li>
+        <li>24/7 service available</li>
+      </ul>
+      <h2>About Us</h2>
+      <p>Nanma Yatra is a family-owned business that has been providing transportation services for over 25 years. We take pride in our commitment to safety and customer satisfaction. Our drivers are experienced and knowledgeable about the city, ensuring that you reach your destination in a timely manner.</p>
+      <h2>Contact Us</h2>
+      <p>If you have any questions or concerns, please feel free to contact us at:</p>
+      <ul>
+        <li>Email: info@nanmayatra.com</li>
+        <li>Phone: 555-555-5555</li>
+        <li>Address: 123 Main Street, Anytown, USA</li>
+      </ul>
+    </div>
+   
+    <footer>
+      <p>&copy; 2023 Nanma Yatra - Bus and Auto Service</p>
+    </footer>
+  </body>
+</html>

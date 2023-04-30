@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Today's Holidays</title>
+  </head>
+  <body>
+    <h1>Today's Holidays</h1>
+    <ul>
+      {% for holiday in data %}
+      <li>{{ holiday.name }} - {{ holiday.date }}</li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Go back to home</a>
+  </body>
+</html>
+Assuming you have passed the holidays data to the template context as holidays, this template will render a list of today's holidays with their names and dates. The url tag is used to create a link to the home page using the home URL pattern name.
+
+Note that you will need to include the appropriate CSS and JavaScript files to style the template and add interactivity, respectively.
+
+
+
+
+
+

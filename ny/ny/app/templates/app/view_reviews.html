@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+      background-color: #fff;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 20px;
+    }
+
+    /* Main Content Styles */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    /* Link Styles */
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    /* Button Styles */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 600px) {
+      main {
+        padding: 10px;
+      }
+    }
+    </style>
+</head>
+<body> 
+    <h1>All Reviews</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Reviewer Name</th>
+          <th>Date</th>
+          <th>Product/Service</th>
+          <th>Rating</th>
+          <th>Review Content</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for review in reviews %}
+          <tr>
+            <td>{{ review.reviewer_name }}</td>
+            <td>{{ review.review_date }}</td>
+            <td>{{ review.product_or_service }}</td>
+            <td>{{ review.rating }}</td>
+            <td>{{ review.review_content }}</td>
+          </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="5"><a href="{% url 'home' %}"><i class="fa fa-bold" aria-hidden="true">HOME</i></a></td>
+        </tr>
+      </tbody>
+    </table>
+    
+</body>
+</html>

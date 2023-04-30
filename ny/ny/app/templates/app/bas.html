@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    {% load static %}
+    <title>Book a Taxi</title>
+    <style>
+      /* Main styles */
+      body {
+        background-color: #eee;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url(" {% static 'images/imageb.avif' %} ");
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      h1, h2, h3 {
+        margin-top: 0;
+        text-align: center;
+        text-shadow: 2px 2px #333;
+      }
+      h1 {
+        font-size: 3rem;
+        color: #333;
+      }
+      h2 {
+        font-size: 2rem;
+        color: #333;
+        text-transform: uppercase;
+      }
+      h3 {
+        font-size: 1.5rem;
+        color: #333;
+      }
+      p {
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        color: #555;
+      }
+      input[type="text"], input[type="email"], input[type="tel"] {
+        padding: 0.5rem;
+        width:90%;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding-right: 10px;
+      }
+      input[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #fff;
+        color: #333;
+      }
+      /* Form styles */
+      form {
+        background-color: #fff;
+        max-width: 500px;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #333;
+        background-color: rgba(255,255,254,0.5);
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+      /* Responsive styles */
+      @media screen and (max-width: 768px) {
+        form {
+          margin: 1rem;
+          padding: 1rem;
+        }
+      }
+      select {
+  padding: 0.5rem;
+  width: 90%;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #555;
+}
+
+/* Option styles */
+option {
+  background-color: #fff;
+  color: #333;
+}
+    </style>
+  </head>
+  <body>
+    <h1>Book a Taxi</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+      <h2>Contact Information</h2>
+      
+      <label for="email">Email</label>
+      <input type="email"  name="e" required>
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="p" pattern="[0-9]{10}" required>
+      <h2>Travel Details</h2>
+      <label for="pickup">Pickup Location</label>
+      <input type="text" id="pickup" name="pl" required>
+      <label for="dropoff">Dropoff Location</label>
+      <input type="text" id="dropoff" name="dc" required>
+      <h2>Taxi Options</h2>
+<label for="driver-type">Driver Type</label>
+<select id="driver-type" name="dt">
+  <option value="normal">Normal Driver</option>
+  <option value="women">Women Driver</option>
+  <option value="book-for-time">Book Taxi for Certain Time</option>
+</select>
+      <input type="submit" value="Book Now">
+    </form>
+  </body>
+</html>

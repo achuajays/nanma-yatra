@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- {% load google_maps %} -->
+    {% load google %}
+
+    {% googlemap "my_map" my_model.location.lat my_model.location.lng %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqHJnqG_H2Wq9uQ37_SZ0HVYh5St2-Wqw"></script>
+</body>
+</html>

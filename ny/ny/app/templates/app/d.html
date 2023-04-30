@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Available Drivers</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      h1 {
+        color: #0077cc;
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #0077cc;
+        color: white;
+      }
+
+      tr:hover {
+        background-color: #f5f5f5;
+      }
+
+      p {
+        font-style: italic;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Available</h1>
+    {% if form  %}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Pickup Location</th>
+            <th>Drop-off Location</th>
+            <th>ACCEPT</th>
+            <th>{{ bas }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for driver in form %}
+            <tr>
+              <td>{{ driver.name }}</td>
+              <td>{{ driver.email }}</td>
+              <td>{{ driver.phno }}</td>
+              <td>{{ driver.po }}</td>
+              <td>{{ driver.do }}</td>
+              <td colspan="2"><a  href="{% url 'a' driver.id bas %}">{{ driver.name }}</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No drivers available.</p>
+    {% endif %}
+  </body>
+</html>
